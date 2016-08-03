@@ -2,9 +2,10 @@
   "name": "node-dingtalk",
   "version": "0.0.1",
   "description": "dingtalk node sdk",
-  "main": "./lib",
+  "main": "./lib/dingtalk",
   "dependencies": {
-
+    "agentkeepalive": "^2.2.0",
+    "urllib": "^2.11.0"
   },
   "devDependencies": {
     "autod": "^2.6.1",
@@ -17,8 +18,7 @@
     "mockjs": "^1.0.1-beta2",
     "power-assert": "^1.4.1",
     "supertest": "^2.0.0",
-    "thunk-mocha": "^1.0.4",
-    "urllib": "^2.11.0"
+    "thunk-mocha": "^1.0.4"
   },
   "engines": {
     "node": ">=4.0.0"

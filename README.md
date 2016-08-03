@@ -1,4 +1,4 @@
-# node-dingtalk
+# node-dingtalk - [钉钉SDK](https://open-doc.dingtalk.com)
 
 [![NPM version][npm-image]][npm-url]
 [![build status][travis-image]][travis-url]
@@ -20,8 +20,6 @@
 [download-image]: https://img.shields.io/npm/dm/node-dingtalk.svg?style=flat-square
 [download-url]: https://npmjs.org/package/node-dingtalk
 
-钉钉 SDK
-
 ## Install
 
 ```bash
@@ -30,9 +28,90 @@ $ npm i node-dingtalk --save
 
 ## Usage
 
-<!--
-Usage, configuration and example here.
--->
+```javascript
+const DingTalk = require('node-dingtalk');
+const dingtalk = new DingTalk({
+  corpid: '',
+  corpsecret: ''
+});
+
+const deparment = dingtalk.department.get('1');
+console.log(deparment);
+```
+
+## Api
+
+官方文档: https://open-doc.dingtalk.com/
+
+### Department
+
+https://open-doc.dingtalk.com/doc2/detail.htm?treeId=172&articleId=104979&docType=1
+
+#### department.list(opts)
+
+获取部门列表 `department/list`
+
+#### department.get(id)
+
+获取部门详情 `department/get`
+
+#### department.create({ name, parentid, … })
+
+创建部门 `department/create`
+
+#### department.update({ id, … })
+
+更新部门 `department/update`
+
+#### department.delete(id)
+
+ 删除部门 `department/delete`
+
+
+
+### User
+
+https://open-doc.dingtalk.com/doc2/detail.htm?treeId=172&articleId=104979&docType=1
+
+#### user.list({ departmentId, isSimple, opts })
+
+- 获取部门成员 `user/simplelist`
+- 获取部门成员(详情) `user/list`
+
+分页查询参数放到 opts
+
+#### user.listAll({ departmentId, isSimple, opts })
+
+自动遍历分页查询
+- 查询所有的成员 (departmentId 为空时)
+- 查询该部门所有成员
+
+#### user.get(id, opts)
+
+获取成员详情 `user/get`
+
+id 对应于 userid, 参数, 其他参数放到 opts
+
+#### user.create({ userid, name, department[], mobile, … })
+
+创建成员  `user/create`
+
+#### user.update({ userid, name, … })
+
+更新成员 `user/update`
+
+#### user.delete(id/id[])
+
+- 删除成员 `user/delete`
+- 批量删除成员 `user/batchdelete`
+
+#### user.getUseridByUnionid(openId)
+
+根据 unionid 获取成员的 userid,  `user/getUseridByUnionid`
+
+此处的 unionid 即为 user.openId
+
+
 
 ## Questions & Suggestions
 
