@@ -1,7 +1,6 @@
 'use strict';
 
 const assert = require('power-assert');
-const urllib = require('urllib');
 
 const DingTalk = require('../../../lib/dingtalk');
 const options = require('./../../fixtures/test.config.json');
@@ -10,7 +9,7 @@ describe('test/lib/api/client.test.js', () => {
   let dingtalk;
 
   before(function* () {
-    dingtalk = new DingTalk(Object.assign(options, { urllib }));
+    dingtalk = new DingTalk(options);
   });
 
   it('getAccessToken', function* () {

@@ -128,6 +128,7 @@ describe('test/lib/api/user.test.js', () => {
   });
 
   it('list all user at special department', function* () {
+    this.timeout(1000 * 60 * 2);
     const mobileList = [ getRandomMobile(), getRandomMobile() ];
     for (const mobile of mobileList) {
       yield createUser(mobile);
@@ -142,7 +143,8 @@ describe('test/lib/api/user.test.js', () => {
     yield dingtalk.user.delete(mobileList);
   });
 
-  it.only('list all user', function* () {
+  it('list all user', function* () {
+    this.timeout(1000 * 60 * 2);
     const mobileList = [ getRandomMobile(), getRandomMobile() ];
     for (const mobile of mobileList) {
       yield createUser(mobile);
