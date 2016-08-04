@@ -6,6 +6,7 @@
   "dependencies": {
     "agentkeepalive": "^2.2.0",
     "co-parallel": "^1.0.0",
+    "formstream": "^1.0.0",
     "urllib": "^2.11.1"
   },
   "devDependencies": {
