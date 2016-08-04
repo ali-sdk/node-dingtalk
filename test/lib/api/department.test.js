@@ -1,7 +1,6 @@
 'use strict';
 
 const assert = require('power-assert');
-const urllib = require('urllib');
 
 const DingTalk = require('../../../lib/dingtalk');
 const options = require('./../../fixtures/test.config.json');
@@ -10,11 +9,11 @@ describe('test/lib/api/department.test.js', () => {
   let dingtalk;
 
   before(function* () {
-    dingtalk = new DingTalk(Object.assign(options, { urllib }));
+    dingtalk = new DingTalk(options);
   });
 
   function* createDepartment() {
-    const name = 'department-test';
+    const name = 'department-test-' + Date.now();
     yield dingtalk.department.create({ parentid: 1, name });
     const result = yield dingtalk.department.list();
     return result.department.find(item => item.name === name);
@@ -27,21 +26,25 @@ describe('test/lib/api/department.test.js', () => {
   });
 
   it('create', function* () {
-    const name = 'department-test';
+    const name = 'department-test-' + Date.now();
     const department = yield dingtalk.department.create({
       parentid: 1,
       name,
     });
-    assert(department.id || department.errcode === 60008);
+    assert(department.id);
     console.log('%j', department);
 
-    const result = yield dingtalk.department.delete(department.id);
-    console.log('%j', result);
+    yield dingtalk.department.delete(department.id);
   });
 
   it('get', function* () {
     const department = yield dingtalk.department.get('1');
     assert(department.id);
+  });
+
+  it('get undefined when not exist', function* () {
+    const department = yield dingtalk.department.get('abc');
+    assert(!department);
   });
 
   it('update', function* () {
@@ -62,7 +65,7 @@ describe('test/lib/api/department.test.js', () => {
 
   it('delete', function* () {
     const department = yield createDepartment();
-    assert(department);
+    assert(department.id);
     console.log('%j', department);
 
     let result = yield dingtalk.department.delete(department.id);
@@ -70,6 +73,6 @@ describe('test/lib/api/department.test.js', () => {
     console.log('%j', result);
 
     result = yield dingtalk.department.get(department.id);
-    assert(result.errcode === 60003);
+    assert(!result);
   });
 });

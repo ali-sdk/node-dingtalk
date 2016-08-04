@@ -2,7 +2,6 @@
 
 const Mock = require('mockjs');
 const assert = require('power-assert');
-const urllib = require('urllib');
 
 const DingTalk = require('../../../lib/dingtalk');
 const options = require('./../../fixtures/test.config.json');
@@ -11,7 +10,7 @@ describe('test/lib/api/user.test.js', () => {
   let dingtalk;
 
   before(function* () {
-    dingtalk = new DingTalk(Object.assign(options, { urllib }));
+    dingtalk = new DingTalk(options);
   });
 
   function getRandomMobile() {
