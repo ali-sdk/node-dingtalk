@@ -143,7 +143,7 @@ describe('test/lib/api/user.test.js', () => {
     yield dingtalk.user.delete(mobileList);
   });
 
-  it('list all user', function* () {
+  it.only('list all user', function* () {
     const mobileList = [ getRandomMobile(), getRandomMobile() ];
     for (const mobile of mobileList) {
       yield createUser(mobile);
