@@ -22,7 +22,7 @@
 
 ## Install
 
-```bash
+```shell
 $ npm i node-dingtalk --save
 ```
 
