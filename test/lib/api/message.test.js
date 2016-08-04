@@ -33,7 +33,7 @@ describe('test/lib/api/message.test.js', () => {
 
     const result = yield dingtalk.message.send({
       touser: user.userid,
-      agentid: '10849332',
+      agentid: options.agentid,
       msgtype: 'text',
       text: {
         content: 'just a test',

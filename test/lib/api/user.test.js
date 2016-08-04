@@ -158,4 +158,9 @@ describe('test/lib/api/user.test.js', () => {
 
     yield dingtalk.user.delete(mobileList);
   });
+
+  it('getUserInfoByCode', function* () {
+    const result = yield dingtalk.user.getUserInfoByCode('abc');
+    assert(result.errcode === 40078);
+  });
 });
