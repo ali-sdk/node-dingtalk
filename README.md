@@ -43,11 +43,26 @@ console.log(deparment);
 
 官方文档: https://open-doc.dingtalk.com/
 
+### Client
+
+#### client.getAccessToken()
+获取 AccessToken, 并在有效期内自动缓存, `gettoken`
+
+#### client.getJSApiTicket()
+获取 jsapi_ticket, 并在有效期内自动缓存, `get_jsapi_ticket`
+
+#### client.getJSApiConfig()
+获取 js api 接入时需要的配置数据以及签名
+
+#### client.request/get/post/upload
+辅助方法, 参见 `npm urllib`
+
+
 ### Department
 
 https://open-doc.dingtalk.com/doc2/detail.htm?treeId=172&articleId=104979&docType=1
 
-#### department.list(opts)
+#### department.list([opts])
 
 获取部门列表 `department/list`
 
@@ -73,20 +88,20 @@ https://open-doc.dingtalk.com/doc2/detail.htm?treeId=172&articleId=104979&docTyp
 
 https://open-doc.dingtalk.com/doc2/detail.htm?treeId=172&articleId=104979&docType=1
 
-#### user.list({ departmentId, isSimple, opts })
+#### user.list(departmentId, [isSimple], [opts])
 
 - 获取部门成员 `user/simplelist`
 - 获取部门成员(详情) `user/list`
 
 分页查询参数放到 opts
 
-#### user.listAll({ departmentId, isSimple, opts })
+#### user.listAll([departmentId], [isSimple], [opts])
 
 自动遍历分页查询
 - 查询所有的成员 (departmentId 为空时)
 - 查询该部门所有成员
 
-#### user.get(id, opts)
+#### user.get(id, [opts])
 
 获取成员详情 `user/get`
 
@@ -111,6 +126,30 @@ id 对应于 userid, 参数, 其他参数放到 opts
 
 此处的 unionid 即为 user.openId
 
+#### user.getByMobile(mobile)
+
+根据手机号获取成员 userid,  `user/get_by_mobile`
+
+
+### Message
+
+#### message.send({ touser, toparty, msgtype, ... })
+发送企业消息, `message/send`
+
+### message.listMessageStatus(messageId)
+获取企业会话消息已读未读状态, `message/list_message_status`
+
+
+### Media
+
+#### media.upload(type, filePath)
+上传媒体文件 `media/upload`
+
+#### media.get(id)
+获取媒体文件的下载地址 `media/get`
+
+#### media.download(id, targetDir, [fileName])
+下载媒体文件 `media/get`
 
 
 ## Questions & Suggestions
