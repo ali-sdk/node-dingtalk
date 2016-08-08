@@ -78,14 +78,14 @@ describe('test/lib/api/user.test.js', () => {
   });
 
   it('list', function* () {
-    const userList = yield dingtalk.user.list(1);
+    const userList = yield dingtalk.user.list('1');
     console.log('%j', userList);
     assert(userList.errcode === 0);
     assert(userList.userlist.length > 0);
   });
 
   it('list simple', function* () {
-    const userList = yield dingtalk.user.list(1, true);
+    const userList = yield dingtalk.user.list('1', true);
     console.log('%j', userList);
     assert(userList.errcode === 0);
     assert(userList.userlist.length > 0);
@@ -162,5 +162,14 @@ describe('test/lib/api/user.test.js', () => {
   it('getUserInfoByCode', function* () {
     const result = yield dingtalk.user.getUserInfoByCode('abc');
     assert(result.errcode === 40078);
+  });
+
+  it.only('getByMobile', function* () {
+    const userList = yield dingtalk.user.list('1');
+    console.log('%j', userList);
+
+    const userInfo = yield dingtalk.user.getByMobile(userList.userlist[0].mobile, { ignoreError: true });
+    console.log('%j', userInfo);
+    assert(userInfo.userid === userList.userlist[0].userid || userInfo.errcode === 60011);
   });
 });
