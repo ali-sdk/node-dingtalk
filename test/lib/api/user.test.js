@@ -160,8 +160,11 @@ describe('test/lib/api/user.test.js', () => {
   });
 
   it('getUserInfoByCode', function* () {
-    const result = yield dingtalk.user.getUserInfoByCode('abc');
-    assert(result.errcode === 40078);
+    try {
+      yield dingtalk.user.getUserInfoByCode('abc');
+    } catch (err) {
+      assert(err.data.errcode === 40078);
+    }
   });
 
   it('getByMobile', function* () {
