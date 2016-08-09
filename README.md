@@ -9,12 +9,12 @@
 
 [npm-image]: https://img.shields.io/npm/v/node-dingtalk.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/node-dingtalk
-[travis-image]: https://img.shields.io/travis/eggjs/node-dingtalk.svg?style=flat-square
-[travis-url]: https://travis-ci.org/eggjs/node-dingtalk
-[codecov-image]: https://img.shields.io/codecov/c/github/eggjs/node-dingtalk.svg?style=flat-square
-[codecov-url]: https://codecov.io/github/eggjs/node-dingtalk?branch=master
-[david-image]: https://img.shields.io/david/eggjs/node-dingtalk.svg?style=flat-square
-[david-url]: https://david-dm.org/eggjs/node-dingtalk
+[travis-image]: https://img.shields.io/travis/ali-sdk/node-dingtalk.svg?style=flat-square
+[travis-url]: https://travis-ci.org/ali-sdk/node-dingtalk
+[codecov-image]: https://img.shields.io/codecov/c/github/ali-sdk/node-dingtalk.svg?style=flat-square
+[codecov-url]: https://codecov.io/github/ali-sdk/node-dingtalk?branch=master
+[david-image]: https://img.shields.io/david/ali-sdk/node-dingtalk.svg?style=flat-square
+[david-url]: https://david-dm.org/ali-sdk/node-dingtalk
 [snyk-image]: https://snyk.io/test/npm/node-dingtalk/badge.svg?style=flat-square
 [snyk-url]: https://snyk.io/test/npm/node-dingtalk
 [download-image]: https://img.shields.io/npm/dm/node-dingtalk.svg?style=flat-square
