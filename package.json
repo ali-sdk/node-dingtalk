@@ -42,12 +42,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/atian25/node-dingtalk.git"
+    "url": "git+https://github.com/ali-sdk//node-dingtalk.git"
   },
   "bugs": {
-    "url": "https://github.com/atian25/node-dingtalk/issues"
+    "url": "https://github.com/ali-sdk/node-dingtalk/issues"
   },
-  "homepage": "https://github.com/atian25/node-dingtalk#readme",
+  "homepage": "https://github.com/ali-sdk/node-dingtalk",
   "author": "TZ <atian25@qq.com>",
   "license": "MIT"
 }

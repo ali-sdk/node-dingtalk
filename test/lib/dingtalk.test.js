@@ -2,8 +2,8 @@
 
 const assert = require('power-assert');
 
-const DingTalk = require('../lib/dingtalk');
-const options = require('./fixtures/test.config.json');
+const DingTalk = require('../../lib/dingtalk');
+const options = require('./../fixtures/test.config.json');
 
 describe('test/dingtalk.test.js', () => {
   let dingtalk;
