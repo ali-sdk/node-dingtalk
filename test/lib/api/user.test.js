@@ -164,7 +164,7 @@ describe('test/lib/api/user.test.js', () => {
     assert(result.errcode === 40078);
   });
 
-  it.only('getByMobile', function* () {
+  it('getByMobile', function* () {
     const userList = yield dingtalk.user.list('1');
     console.log('%j', userList);
 
