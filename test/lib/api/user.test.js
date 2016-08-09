@@ -171,8 +171,12 @@ describe('test/lib/api/user.test.js', () => {
     const userList = yield dingtalk.user.list('1');
     console.log('%j', userList);
 
-    const userInfo = yield dingtalk.user.getByMobile(userList.userlist[0].mobile, { ignoreError: true });
-    console.log('%j', userInfo);
-    assert(userInfo.userid === userList.userlist[0].userid || userInfo.errcode === 60011);
+    try {
+      const userInfo = yield dingtalk.user.getByMobile(userList.userlist[0].mobile);
+      console.log('%j', userInfo);
+      assert(userInfo.userid === userList.userlist[0].userid);
+    } catch (err) {
+      assert(err.data.errcode === 60011);
+    }
   });
 });
