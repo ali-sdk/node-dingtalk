@@ -10,6 +10,8 @@ install:
 test_script:
   - node --version
   - npm --version
+  - npm i -g gulp
+  - gulp
   - npm run ci
 
 build: off
