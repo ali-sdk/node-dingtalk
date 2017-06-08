@@ -1,0 +1,18 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "esnext",
+		"noImplicitAny": true,
+		"sourceMap": false,
+		"strictNullChecks": true,
+		"noImplicitThis": true,
+		"rootDir": "./lib/",
+		"allowJs": false,
+		"allowUnreachableCode": false,
+		"allowUnusedLabels": false,
+		"alwaysStrict": true,
+		"charset": "utf8",
+		"moduleResolution": "node",
+		"types": ["node"]
+	}
+}
