@@ -1,4 +1,7 @@
 {
+	"include": [
+		"./src/"
+	],
 	"compilerOptions": {
 		"module": "commonjs",
 		"target": "esnext",
@@ -6,12 +9,17 @@
 		"sourceMap": false,
 		"strictNullChecks": true,
 		"noImplicitThis": true,
-		"rootDir": "./lib/",
+		"lib": [
+			"esnext",
+			"dom"
+		],
+		"rootDir": "./src/",
 		"allowJs": false,
 		"allowUnreachableCode": false,
 		"allowUnusedLabels": false,
 		"alwaysStrict": true,
 		"charset": "utf8",
+		"outDir": "./dist",
 		"moduleResolution": "node",
 		"types": ["node"]
 	}

@@ -3,10 +3,10 @@
 const Mock = require('mockjs');
 const assert = require('power-assert');
 
-const DingTalk = require('../../../lib/dingtalk');
+const DingTalk = require('../../../dist/dingtalk');
 const options = require('./../../fixtures/test.config.json');
 
-describe('test/lib/api/user.test.js', () => {
+describe('test/dist/api/user.test.js', () => {
   let dingtalk;
 
   before(function* () {
@@ -85,7 +85,7 @@ describe('test/lib/api/user.test.js', () => {
   });
 
   it('list simple', function* () {
-    const userList = yield dingtalk.user.list('1', true);
+    const userList = yield dingtalk.user.simplelist('1');
     console.log('%j', userList);
     assert(userList.errcode === 0);
     assert(userList.userlist.length > 0);
@@ -134,7 +134,7 @@ describe('test/lib/api/user.test.js', () => {
       yield createUser(mobile);
     }
 
-    const result = yield dingtalk.user.listAll('1', true, { size: 1 });
+    const result = yield dingtalk.user.simpleListAll('1', { size: 1 });
     const userIds = result.userlist.map(item => item.userid);
     assert(result.queryCount >= 3);
     assert(userIds.indexOf(mobileList[0]) !== -1);
@@ -150,7 +150,7 @@ describe('test/lib/api/user.test.js', () => {
       yield createUser(mobile);
     }
 
-    const result = yield dingtalk.user.listAll(undefined, true, { size: 1 });
+    const result = yield dingtalk.user.simpleListAll(undefined, { size: 1 });
     const userIds = result.userlist.map(item => item.userid);
     assert(result.queryCount >= 3);
     assert(userIds.indexOf(mobileList[0]) !== -1);

@@ -35,7 +35,7 @@ const dingtalk = new DingTalk({
   corpsecret: ''
 });
 
-const deparment = dingtalk.department.get('1');
+const deparment = await dingtalk.department.get('1');
 console.log(deparment);
 ```
 
@@ -88,14 +88,23 @@ https://open-doc.dingtalk.com/doc2/detail.htm?treeId=172&articleId=104979&docTyp
 
 https://open-doc.dingtalk.com/doc2/detail.htm?treeId=172&articleId=104979&docType=1
 
-#### user.list(departmentId, [isSimple], [opts])
+#### user.simplelist([departmentId], [opts])
 
 - 获取部门成员 `user/simplelist`
+
+分页查询参数放到 opts
+#### user.list([departmentId], [opts])
+
 - 获取部门成员(详情) `user/list`
 
 分页查询参数放到 opts
 
-#### user.listAll([departmentId], [isSimple], [opts])
+#### user.simpleListAll([departmentId], [opts])
+
+自动遍历分页查询
+- 查询所有的成员 (departmentId 为空时)
+- 查询该部门所有成员
+#### user.listAll([departmentId], [opts])
 
 自动遍历分页查询
 - 查询所有的成员 (departmentId 为空时)
@@ -151,6 +160,22 @@ id 对应于 userid, 参数, 其他参数放到 opts
 #### media.download(id, targetDir, [fileName])
 下载媒体文件 `media/get`
 
+## Develop
+1. clone this repo
+```sh
+$ git clone git@github.com:ali-sdk/node-dingtalk.git
+$ cnpm install
+```
+2. Coding
+3. Compile the typescript to javascript(you may want to change the target in tsconfig to 'es5')
+```sh
+# you may have gulp installed globally by `npm i -g gulp` or `yarn global add gulp`
+$ gulp
+```
+4. Test your code
+```sh
+$ npm test
+```
 
 ## Questions & Suggestions
 
