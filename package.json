@@ -3,6 +3,7 @@
   "version": "0.2.1",
   "description": "dingtalk node sdk",
   "main": "./lib/dingtalk",
+  "types": "./lib/dingtalk.d.ts",
   "dependencies": {
     "agentkeepalive": "^2.2.0",
     "co-parallel": "^1.0.0",
@@ -21,7 +22,8 @@
     "power-assert": "^1.4.1",
     "proxy-agent": "^2.0.0",
     "supertest": "^2.0.0",
-    "thunk-mocha": "^1.0.4"
+    "thunk-mocha": "^1.0.4",
+    "typescript": "next"
   },
   "engines": {
     "node": ">=4.0.0"
