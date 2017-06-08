@@ -15,6 +15,7 @@
 		],
 		"rootDir": "./src/",
 		"allowJs": false,
+		"declaration": true,
 		"allowUnreachableCode": false,
 		"allowUnusedLabels": false,
 		"alwaysStrict": true,

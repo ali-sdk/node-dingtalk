@@ -176,6 +176,10 @@ $ gulp
 ```sh
 $ npm test
 ```
+5. publish
+```sh
+$ npm publish --tag dev ./dist
+```
 
 ## Questions & Suggestions
 
