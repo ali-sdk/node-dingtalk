@@ -22,6 +22,8 @@
 		"charset": "utf8",
 		"outDir": "./dist",
 		"moduleResolution": "node",
-		"types": ["node"]
+		"types": [
+			"node"
+		]
 	}
 }
