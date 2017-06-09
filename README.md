@@ -59,6 +59,8 @@ console.log(deparment);
 
 #### client.getAccessToken()
 获取 AccessToken, 并在有效期内自动缓存, `gettoken`
+#### client.get_sso_access_token(ssosecret)
+获取 SsoToken, 并在有效期内自动缓存, `sso/gettoken`
 
 #### client.getJSApiTicket()
 获取 jsapi_ticket, 并在有效期内自动缓存, `get_jsapi_ticket`

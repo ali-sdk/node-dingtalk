@@ -63,7 +63,7 @@ export class Media {
 		if (url) {
 			await this.client.get_urllib().request(url, {
 				writeStream: fs.createWriteStream(filePath),
-				timeout: 20000,
+				timeout: 20000
 			});
 			return filePath;
 		}

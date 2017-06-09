@@ -20,6 +20,8 @@ export class Client {
 	 */
 	private accessToken: string;
 	private accessTokenExpireTime: number;
+	private sso_oken: string;
+	private sso_oken_expire_time: number;
 	/**
 	 * @member Client#jsapiTicket 缓存的 js api ticket
 	 * @type {String}
@@ -28,6 +30,7 @@ export class Client {
 	private jsapiTicketExpireTime: number;
 	private options: {
 		accessTokenLifeTime: number;
+		sso_token_life_time: number;
 		jsapiTicketLifeTime: number;
 	} & Options;
 	private __urllib: any;
@@ -47,7 +50,8 @@ export class Client {
 
 		this.options = Object.assign({
 			accessTokenLifeTime: (7200 - 1000) * 1000,
-			jsapiTicketLifeTime: (7200 - 1000) * 1000,
+			sso_token_life_time: (7200 - 1000) * 1000,
+			jsapiTicketLifeTime: (7200 - 1000) * 1000
 		}, options);
 	}
 
@@ -68,12 +72,12 @@ export class Client {
 					keepAliveTimeout: 30000,
 					timeout: 30000,
 					maxSockets: Infinity,
-					maxFreeSockets: 256,
+					maxFreeSockets: 256
 				}, this.options.urllib);
 
 				this.__urllib = urllib.create({
 					agent: new Agent(opts),
-					httpsAgent: new HttpsAgent(opts),
+					httpsAgent: new HttpsAgent(opts)
 				});
 			}
 		}
@@ -129,7 +133,7 @@ export class Client {
 		return this.request(url, {
 			method: 'POST',
 			headers: form.headers(),
-			stream: form,
+			stream: form
 		});
 	}
 
@@ -145,7 +149,7 @@ export class Client {
 		const accessToken = await this.getAccessToken();
 		const url = `${this.options.host}/${api}`;
 		return await this.request(url, Object.assign({
-			data: Object.assign({ access_token: accessToken }, data),
+			data: Object.assign({ access_token: accessToken }, data)
 		}, opts)) as Response;
 	}
 
@@ -163,7 +167,7 @@ export class Client {
 		return await this.request(url, Object.assign({
 			method: 'POST',
 			contentType: 'json',
-			data,
+			data
 		}, opts));
 	}
 
@@ -171,6 +175,7 @@ export class Client {
 	 * 获取 AccessToken, 并在有效期内自动缓存
 	 * - gettoken
 	 * @return {String} accessToken
+	 * @see https://open-doc.dingtalk.com/docs/doc.htm?spm=a219a.7629140.0.0.4Q29hR&treeId=385&articleId=104980&docType=1#s2
 	 */
 	async getAccessToken() {
 		if (!this.accessToken || !this.accessTokenExpireTime || this.accessTokenExpireTime <= Date.now()) {
@@ -178,13 +183,35 @@ export class Client {
 			const response = await this.request(url, {
 				data: {
 					corpid: this.options.corpid,
-					corpsecret: this.options.corpsecret,
-				},
+					corpsecret: this.options.corpsecret
+				}
 			});
 			this.accessToken = response.access_token;
 			this.accessTokenExpireTime = Date.now() + this.options.accessTokenLifeTime;
 		}
 		return this.accessToken;
+	}
+
+	/**
+	 * 获取 AccessToken, 并在有效期内自动缓存
+	 * - sso/gettoken
+	 * @param {String} ssosecret	专属的SSOSecret
+	 * @return {String} access_token	获取到的凭证
+	 * @see https://open-doc.dingtalk.com/docs/doc.htm?spm=a219a.7629140.0.0.4Q29hR&treeId=385&articleId=104980&docType=1#s3
+	 */
+	async get_sso_access_token(ssosecret: string) {
+		if (!this.sso_oken || !this.sso_oken_expire_time || this.sso_oken_expire_time <= Date.now()) {
+			const url = `${this.options.host}/sso/gettoken`;
+			const response = await this.request(url, {
+				data: {
+					corpid: this.options.corpid,
+					corpsecret: ssosecret
+				}
+			});
+			this.sso_oken = response.access_token;
+			this.sso_oken_expire_time = Date.now() + this.options.sso_token_life_time;
+		}
+		return this.sso_oken;
 	}
 
 	/**
@@ -245,7 +272,7 @@ export class Client {
 			jsapi_ticket: ticket,
 			noncestr: 'DingTalk#' + Date.now(),
 			timestamp: Date.now(),
-			url: this._normalizeUrl(url),
+			url: this._normalizeUrl(url)
 		}, opts as {
 			[key: string]: string | number;
 		});
@@ -259,7 +286,7 @@ export class Client {
 			corpId: this.options.corpid,
 			timeStamp: signObj.timestamp,
 			nonceStr: signObj.noncestr,
-			signature,
+			signature
 		};
 	}
 }

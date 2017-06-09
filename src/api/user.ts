@@ -108,7 +108,7 @@ export class UserHelper {
 		return this.list_all(departmentId, false, opts);
 	}
 
-	async list_all<T extends User>(departmentId?: number, simple?: boolean, opts?: ListAllOption) {
+	private async list_all<T extends User>(departmentId?: number, simple?: boolean, opts?: ListAllOption) {
 		opts = opts || {};
 		let queryCount = 0;
 
@@ -154,7 +154,7 @@ export class UserHelper {
 			errcode: 0,
 			errmsg: 'ok',
 			queryCount,
-			userlist: Array.from(userMap.values()),
+			userlist: Array.from(userMap.values())
 		};
 	}
 
