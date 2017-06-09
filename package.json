@@ -38,7 +38,7 @@
 		"cov": "egg-bin cov",
 		"ci": "npm run cov",
 		"autod": "autod",
-		"dev": "npm version '0.3.0-dev.'$(date +%Y%m%d%H%M) && gulp dev && npm publish ./dist/"
+		"dev": "npm version '0.3.0-dev.'$(date +%Y%m%d%H%M) && gulp dev && npm publish --tag dev ./dist/"
 	},
 	"ci": {
 		"version": "4, 6"
