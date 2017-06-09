@@ -2,10 +2,10 @@
 
 const assert = require('power-assert');
 
-const DingTalk = require('../../../lib/dingtalk');
+const DingTalk = require('../../../dist/dingtalk');
 const options = require('./../../fixtures/test.config.json');
 
-describe('test/lib/api/client.test.js', () => {
+describe('test/dist/api/client.test.js', () => {
   let dingtalk;
 
   before(function* () {

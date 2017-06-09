@@ -11,8 +11,6 @@ module.exports = {
     'egg-ci',
     'egg-bin',
     'autod',
-    'eslint',
-    'eslint-config-egg',
     'supertest',
     'power-assert',
     'intelli-espower-loader',

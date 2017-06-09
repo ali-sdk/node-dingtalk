@@ -1,0 +1,29 @@
+{
+	"include": [
+		"./src/"
+	],
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "esnext",
+		"noImplicitAny": true,
+		"sourceMap": false,
+		"strictNullChecks": true,
+		"noImplicitThis": true,
+		"lib": [
+			"esnext",
+			"dom"
+		],
+		"rootDir": "./src/",
+		"allowJs": false,
+		"declaration": true,
+		"allowUnreachableCode": false,
+		"allowUnusedLabels": false,
+		"alwaysStrict": true,
+		"charset": "utf8",
+		"outDir": "./dist",
+		"moduleResolution": "node",
+		"types": [
+			"node"
+		]
+	}
+}

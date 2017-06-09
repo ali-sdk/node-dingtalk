@@ -4,10 +4,10 @@ const path = require('path');
 const os = require('os');
 const assert = require('power-assert');
 
-const DingTalk = require('../../../lib/dingtalk');
+const DingTalk = require('../../../dist/dingtalk');
 const options = require('./../../fixtures/test.config.json');
 
-describe('test/lib/api/media.test.js', () => {
+describe('test/dist/api/media.test.js', () => {
   let dingtalk;
 
   before(function* () {

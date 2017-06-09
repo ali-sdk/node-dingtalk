@@ -1,53 +1,60 @@
 {
-  "name": "node-dingtalk",
-  "version": "0.2.1",
-  "description": "dingtalk node sdk",
-  "main": "./lib/dingtalk",
-  "dependencies": {
-    "agentkeepalive": "^2.2.0",
-    "co-parallel": "^1.0.0",
-    "formstream": "^1.0.0",
-    "urllib": "^2.11.1"
-  },
-  "devDependencies": {
-    "autod": "^2.7.0",
-    "egg-bin": "^1.2.0",
-    "egg-ci": "^1.0.3",
-    "eslint": "^3.2.2",
-    "eslint-config-egg": "^3.1.0",
-    "intelli-espower-loader": "^1.0.1",
-    "mocha": "^3.0.1",
-    "mockjs": "^1.0.1-beta2",
-    "power-assert": "^1.4.1",
-    "proxy-agent": "^2.0.0",
-    "supertest": "^2.0.0",
-    "thunk-mocha": "^1.0.4"
-  },
-  "engines": {
-    "node": ">=4.0.0"
-  },
-  "scripts": {
-    "test": "npm run lint && npm run test-local",
-    "test-local": "egg-bin test",
-    "cov": "egg-bin cov",
-    "lint": "eslint --ext js . --fix",
-    "ci": "npm run lint && npm run cov",
-    "autod": "autod"
-  },
-  "ci": {
-    "version": "4, 6"
-  },
-  "keywords": [
-    "dingtalk"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ali-sdk//node-dingtalk.git"
-  },
-  "bugs": {
-    "url": "https://github.com/ali-sdk/node-dingtalk/issues"
-  },
-  "homepage": "https://github.com/ali-sdk/node-dingtalk",
-  "author": "TZ <atian25@qq.com>",
-  "license": "MIT"
+	"name": "node-dd",
+	"version": "0.3.0-dev.201706091050",
+	"description": "dingtalk node sdk",
+	"main": "./dingtalk",
+	"types": "./dingtalk.d.ts",
+	"dependencies": {
+		"agentkeepalive": "latest",
+		"formstream": "latest",
+		"sha1": "latest"
+	},
+	"devDependencies": {
+		"@types/assert": "latest",
+		"@types/node": "latest",
+		"@types/sha1": "latest",
+		"autod": "latest",
+		"del": "latest",
+		"egg-bin": "latest",
+		"egg-ci": "latest",
+		"gulp": "latest",
+		"gulp-sequence": "latest",
+		"gulp-typescript": "latest",
+		"intelli-espower-loader": "latest",
+		"mocha": "latest",
+		"mockjs": "latest",
+		"power-assert": "latest",
+		"proxy-agent": "latest",
+		"supertest": "latest",
+		"thunk-mocha": "latest",
+		"typescript": "next"
+	},
+	"engines": {
+		"node": ">=8.0.0"
+	},
+	"scripts": {
+		"test": "npm run test-local",
+		"test-local": "egg-bin test",
+		"cov": "egg-bin cov",
+		"ci": "npm run cov",
+		"autod": "autod",
+		"dev": "npm version '0.3.0-dev.'$(date +%Y%m%d%H%M) && gulp dev && npm publish --tag dev ./dist/"
+	},
+	"ci": {
+		"version": "4, 6"
+	},
+	"keywords": [
+		"dingtalk",
+		"dd"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ali-sdk//node-dingtalk.git"
+	},
+	"bugs": {
+		"url": "https://github.com/ali-sdk/node-dingtalk/issues"
+	},
+	"homepage": "https://github.com/ali-sdk/node-dingtalk",
+	"author": "TZ <atian25@qq.com>",
+	"license": "MIT"
 }
