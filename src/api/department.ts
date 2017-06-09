@@ -32,7 +32,7 @@ export interface DepartmentDetail {
  * @type {Department}
  */
 export class DepartmentHelper {
-	client: Client;
+	private client: Client;
 	constructor(client: Client) {
 		this.client = client;
 	}

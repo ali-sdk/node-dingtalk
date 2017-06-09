@@ -9,8 +9,8 @@ import * as path from 'path';
  * @type {Media}
  */
 export class Media {
-	client: Client;
-	host: string;
+	private client: Client;
+	private host: string;
 	constructor(client: Client, host: string) {
 		this.client = client;
 		this.host = host;

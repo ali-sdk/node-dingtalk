@@ -6,7 +6,7 @@ import { Client } from './client';
  * @type {Message}
  */
 export class Message {
-	client: Client;
+	private client: Client;
 	constructor(client: Client) {
 		this.client = client;
 	}

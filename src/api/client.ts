@@ -18,19 +18,19 @@ export class Client {
 	 * @member Client#accessToken 缓存的 AccessToken
 	 * @type {String}
 	 */
-	accessToken: string;
-	accessTokenExpireTime: number;
+	private accessToken: string;
+	private accessTokenExpireTime: number;
 	/**
 	 * @member Client#jsapiTicket 缓存的 js api ticket
 	 * @type {String}
 	 */
-	jsapiTicket: string;
-	jsapiTicketExpireTime: number;
-	options: {
+	private jsapiTicket: string;
+	private jsapiTicketExpireTime: number;
+	private options: {
 		accessTokenLifeTime: number;
 		jsapiTicketLifeTime: number;
 	} & Options;
-	__urllib: any;
+	private __urllib: any;
 	/**
 	 * Client 构造函数
 	 * @param {Object} options 配置参数
@@ -214,7 +214,7 @@ export class Client {
 	 * @private
 	 * @see https://open-doc.dingtalk.com/doc2/detail.htm?spm=a219a.7386797.0.0.WXYE3B&treeId=171&articleId=104934&docType=1
 	 */
-	_normalizeUrl(url: string) {
+	private _normalizeUrl(url: string) {
 		// url 处理, 干掉 hash, query 需做 url decode
 		const originUrlObj = Url.parse(url, true);
 		const queryStr = Object.keys(originUrlObj.query).reduce((result, key) => {
