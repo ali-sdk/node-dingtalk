@@ -61,7 +61,7 @@ export class Media {
 		const url = await this.get(id) || '';
 		const filePath = path.join(targetDir, fileName ? fileName : path.basename(url));
 		if (url) {
-			await this.client.urllib.request(url, {
+			await this.client.get_urllib().request(url, {
 				writeStream: fs.createWriteStream(filePath),
 				timeout: 20000,
 			});

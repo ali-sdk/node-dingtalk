@@ -56,7 +56,7 @@ export class Client {
 	 * @return {Object} urlib 实例
 	 * @see https://www.npmjs.com/package/urllib
 	 */
-	get urllib() {
+	get_urllib() {
 		if (!this.__urllib) {
 			// 直接传递 urllib 实例
 			if (this.options.urllib && this.options.urllib.request) {
@@ -88,7 +88,7 @@ export class Client {
 	 */
 	async request(url: string, params: any) {
 		const requestParams = Object.assign({ dataType: 'json' }, this.options.requestOpts, params);
-		const response = await this.urllib.request(url, requestParams);
+		const response = await this.get_urllib().request(url, requestParams);
 		const result = response.data;
 		if (result) {
 			if (result.errcode !== 0) {

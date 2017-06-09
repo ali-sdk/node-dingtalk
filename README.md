@@ -167,7 +167,7 @@ $ git clone git@github.com:ali-sdk/node-dingtalk.git
 $ cnpm install
 ```
 2. Coding
-3. Compile the typescript to javascript(you may want to change the target in tsconfig to 'es5')
+3. Compile the typescript to javascript(you may want to change the target in tsconfig to 'es3')
 ```sh
 # you may have gulp installed globally by `npm i -g gulp` or `yarn global add gulp`
 $ gulp

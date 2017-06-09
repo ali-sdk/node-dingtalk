@@ -1,6 +1,6 @@
 {
-	"name": "node-dingtalk",
-	"version": "0.2.1",
+	"name": "node-dd",
+	"version": "0.3.0",
 	"description": "dingtalk node sdk",
 	"main": "./dingtalk",
 	"types": "./dingtalk.d.ts",
@@ -17,8 +17,6 @@
 		"del": "latest",
 		"egg-bin": "latest",
 		"egg-ci": "latest",
-		"eslint": "latest",
-		"eslint-config-egg": "latest",
 		"gulp": "latest",
 		"gulp-sequence": "latest",
 		"gulp-typescript": "latest",
@@ -35,11 +33,10 @@
 		"node": ">=8.0.0"
 	},
 	"scripts": {
-		"test": "npm run lint && npm run test-local",
+		"test": "npm run test-local",
 		"test-local": "egg-bin test",
 		"cov": "egg-bin cov",
-		"lint": "eslint --ext js . --fix",
-		"ci": "npm run lint && npm run cov",
+		"ci": "npm run cov",
 		"autod": "autod"
 	},
 	"ci": {

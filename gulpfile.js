@@ -15,10 +15,10 @@ gulp.task('compile-ts', () => {
 		.pipe(gulp.dest(dest));
 });
 
-gulp.task('compile-ts-es6', () => {
+gulp.task('compile-ts-es3', () => {
 	const ts = require('gulp-typescript');
 	const tsProject = ts.createProject('./tsconfig.json');
-	tsProject.options.target = 2;
+	tsProject.options.target = 0;
 	const dest = tsProject.options.outDir;
 	return tsProject.src()
 		.pipe(tsProject())
@@ -42,5 +42,5 @@ gulp.task('default', cb => {
 
 gulp.task('dev', cb => {
 	const sequence = require('gulp-sequence');
-	return sequence('clean', 'compile-ts-es6', 'copy-files', cb);
+	return sequence('clean', 'compile-ts-es3', 'copy-files', cb);
 });
