@@ -1,6 +1,6 @@
 {
 	"name": "node-dd",
-	"version": "0.3.0-dev.201706091028",
+	"version": "0.3.0-dev.201706091032",
 	"description": "dingtalk node sdk",
 	"main": "./dingtalk",
 	"types": "./dingtalk.d.ts",
