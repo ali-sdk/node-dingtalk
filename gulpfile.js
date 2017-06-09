@@ -35,12 +35,12 @@ gulp.task('watch', () => {
 });
 
 // =======================================================================
-gulp.task('default', cb => {
+gulp.task('dev', cb => {
 	const sequence = require('gulp-sequence');
 	return sequence('clean', 'compile-ts', 'copy-files', cb);
 });
 
-gulp.task('dev', cb => {
+gulp.task('default', cb => {
 	const sequence = require('gulp-sequence');
 	return sequence('clean', 'compile-ts-es3', 'copy-files', cb);
 });

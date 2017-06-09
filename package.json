@@ -1,6 +1,6 @@
 {
 	"name": "node-dd",
-	"version": "0.3.0-dev.201706090946",
+	"version": "0.3.0-es3",
 	"description": "dingtalk node sdk",
 	"main": "./dingtalk",
 	"types": "./dingtalk.d.ts",
@@ -37,7 +37,8 @@
 		"test-local": "egg-bin test",
 		"cov": "egg-bin cov",
 		"ci": "npm run cov",
-		"autod": "autod"
+		"autod": "autod",
+		"dev": "npm version '0.3.0-dev.'$(date +%Y%m%d%H%M) && gulp dev && npm publish ./dist/"
 	},
 	"ci": {
 		"version": "4, 6"
