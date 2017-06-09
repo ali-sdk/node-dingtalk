@@ -30,7 +30,7 @@ $ npm i node-dd --save
 ## Usage
 
 ```javascript
-const DingTalk = require('node-dingtalk');
+const DingTalk = require('node-dd').DingTalk;
 const dingtalk = new DingTalk({
   corpid: '',
   corpsecret: ''
@@ -39,7 +39,18 @@ const dingtalk = new DingTalk({
 const deparment = await dingtalk.department.get('1');
 console.log(deparment);
 ```
+```typescript
+import { DingTalk } from 'node-dd';
+// or
+import DingTalk from 'node-dd';
+const dingtalk = new DingTalk({
+  corpid: '',
+  corpsecret: ''
+});
 
+const deparment = await dingtalk.department.get('1');
+console.log(deparment);
+```
 ## Api
 
 官方文档: https://open-doc.dingtalk.com/
@@ -176,10 +187,6 @@ $ gulp
 4. Test your code
 ```sh
 $ npm test
-```
-5. publish
-```sh
-$ npm publish --tag dev ./dist
 ```
 
 ## Questions & Suggestions

@@ -8,12 +8,12 @@ import { Options } from './interfaces';
  * 钉钉 SDK
  * @type {DingTalk}
  */
-export = class DingTalk {
-	media: Media;
-	message: Message;
-	user: UserHelper;
-	department: DepartmentHelper;
-	client: Client;
+export class DingTalk {
+	public media: Media;
+	public message: Message;
+	public user: UserHelper;
+	public department: DepartmentHelper;
+	private client: Client;
 	constructor(options: Options) {
 		options.host = options.host || 'https://oapi.dingtalk.com';
 		this.client = new Client(options);
@@ -23,3 +23,5 @@ export = class DingTalk {
 		this.media = new Media(this.client, options.host);
 	}
 }
+
+export default DingTalk;
