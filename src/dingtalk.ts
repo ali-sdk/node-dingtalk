@@ -13,7 +13,7 @@ export class DingTalk {
 	public message: Message;
 	public user: UserHelper;
 	public department: DepartmentHelper;
-	private client: Client;
+	public client: Client;
 	constructor(options: Options) {
 		options.host = options.host || 'https://oapi.dingtalk.com';
 		this.client = new Client(options);
