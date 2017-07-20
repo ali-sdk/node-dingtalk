@@ -32,11 +32,42 @@ $ npm i node-dingtalk --save
 const DingTalk = require('node-dingtalk');
 const dingtalk = new DingTalk({
   corpid: '',
-  corpsecret: ''
+  corpsecret: ''  
 });
 
 const deparment = dingtalk.department.get('1');
 console.log(deparment);
+```
+
+### Cache example
+
+> cluster 下换成 Redis 等外部存储从而降低获取 AccessToken 频率
+
+```javascript
+let CACHE = {};
+
+let cache = {
+  get: (key)=>{    
+    if(CACHE[key] && (CACHE[key].expired < Date.now())){
+      return CACHE[key].value;
+    }else{
+      return null;
+    }      
+  },
+  set: (key, value, maxAge)=>{
+    CACHE[key] = {
+      expired: maxAge,
+      value: value
+    };
+  }
+}
+
+const DingTalk = require('node-dingtalk');
+const dingtalk = new DingTalk({
+  corpid: '',
+  corpsecret: ''
+  cache: cache
+});
 ```
 
 ## Api
