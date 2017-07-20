@@ -60,7 +60,7 @@ let cache = {
       value: value
     };
   }
-}
+};
 
 const DingTalk = require('node-dingtalk');
 const dingtalk = new DingTalk({
