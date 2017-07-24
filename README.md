@@ -45,16 +45,15 @@ console.log(deparment);
 
 ```js
 const CACHE = {};
-
 const cache = {
-  get: key => {
+  get(key) {
     if (CACHE[key] && (CACHE[key].expired < Date.now())) {
       return CACHE[key].value;
     } else {
       return null;
     }
   },
-  set: (key, value, maxAge) => {
+  set(key, value, maxAge) {
     CACHE[key] = {
       expired: maxAge,
       value,
