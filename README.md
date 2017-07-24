@@ -47,17 +47,17 @@ console.log(deparment);
 const CACHE = {};
 
 const cache = {
-  get: (key)=>{    
-    if(CACHE[key] && (CACHE[key].expired < Date.now())){
+  get: key => {
+    if (CACHE[key] && (CACHE[key].expired < Date.now())) {
       return CACHE[key].value;
-    }else{
+    } else {
       return null;
-    }      
+    }
   },
-  set: (key, value, maxAge)=>{
+  set: (key, value, maxAge) => {
     CACHE[key] = {
       expired: maxAge,
-      value: value
+      value,
     };
   },
 };
@@ -65,7 +65,7 @@ const cache = {
 const DingTalk = require('node-dingtalk');
 const dingtalk = new DingTalk({
   corpid: '',
-  corpsecret: ''
+  corpsecret: '',
   cache,
 });
 ```
