@@ -175,11 +175,8 @@ id 对应于 userid, 参数, 其他参数放到 opts
 #### media.upload(type, filePath)
 上传媒体文件 `media/upload`
 
-#### media.get(id)
-获取媒体文件的下载地址 `media/get`
-
 #### media.download(id, targetDir, [fileName])
-下载媒体文件 `media/get`
+下载媒体文件 `media/downloadFile`
 
 
 ## Questions & Suggestions
