@@ -1,6 +1,6 @@
 {
   "name": "node-dingtalk",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "dingtalk node sdk",
   "main": "./lib/dingtalk",
   "dependencies": {
@@ -37,7 +37,7 @@
     "autod": "autod"
   },
   "ci": {
-    "version": "4, 6"
+    "version": "4, 6, 8"
   },
   "keywords": [
     "dingtalk"

@@ -1,4 +1,15 @@
 
+1.0.0 / 2017-07-31
+==================
+
+  * test: change userName to \'user-{userId}\' (#16)
+  * feat: allow save token to external cache && remove `media.get` due to dingtalk api changed (#14)
+
+1.0.0 / 2017-07-31
+==================
+
+  * feat: allow save token to external cache && remove `media.get` due to dingtalk api changed (#14)
+
 0.2.1 / 2016-08-09
 ==================
 
