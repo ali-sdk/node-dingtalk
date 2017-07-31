@@ -14,18 +14,9 @@ describe('test/lib/api/media.test.js', () => {
     dingtalk = new DingTalk(options);
   });
 
-  it('upload && get', function* () {
+  it('upload', function* () {
     const result = yield dingtalk.media.upload('image', path.join(__dirname, '../../fixtures/dingtalk.png'));
     console.log('%j', result);
-
-    const mediaUrl = yield dingtalk.media.get(result.media_id);
-    assert(mediaUrl);
-    console.log('%j', mediaUrl);
-  });
-
-  it('get not exist', function* () {
-    const mediaInfo = yield dingtalk.media.get('@abc');
-    assert(!mediaInfo);
   });
 
   it('download', function* () {

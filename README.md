@@ -28,15 +28,45 @@ $ npm i node-dingtalk --save
 
 ## Usage
 
-```javascript
+```js
 const DingTalk = require('node-dingtalk');
 const dingtalk = new DingTalk({
   corpid: '',
-  corpsecret: ''
+  corpsecret: '',
 });
 
 const deparment = dingtalk.department.get('1');
 console.log(deparment);
+```
+
+### Cache example
+
+> cluster 下换成 Redis 等外部存储从而降低获取 AccessToken 频率
+
+```js
+const CACHE = {};
+const cache = {
+  get(key) {
+    if (CACHE[key] && (CACHE[key].expired < Date.now())) {
+      return CACHE[key].value;
+    } else {
+      return null;
+    }
+  },
+  set(key, value, maxAge) {
+    CACHE[key] = {
+      expired: maxAge,
+      value,
+    };
+  },
+};
+
+const DingTalk = require('node-dingtalk');
+const dingtalk = new DingTalk({
+  corpid: '',
+  corpsecret: '',
+  cache,
+});
 ```
 
 ## Api
@@ -145,11 +175,8 @@ id 对应于 userid, 参数, 其他参数放到 opts
 #### media.upload(type, filePath)
 上传媒体文件 `media/upload`
 
-#### media.get(id)
-获取媒体文件的下载地址 `media/get`
-
 #### media.download(id, targetDir, [fileName])
-下载媒体文件 `media/get`
+下载媒体文件 `media/downloadFile`
 
 
 ## Questions & Suggestions
