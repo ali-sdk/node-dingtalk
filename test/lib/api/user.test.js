@@ -48,13 +48,13 @@ describe('test/lib/api/user.test.js', () => {
 
     const result = yield dingtalk.user.update({
       userid: userId,
-      name: 'user-test-' + userId,
+      name: 'user-' + userId,
     });
     assert(result.errcode === 0);
     console.log('%j', result);
 
     user = yield dingtalk.user.get(userId);
-    assert(user.name === 'user-test-' + userId);
+    assert(user.name === 'user-' + userId);
     console.log('%j', user);
 
     yield dingtalk.user.delete(userId);
