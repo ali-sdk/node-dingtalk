@@ -7,7 +7,6 @@
     "agentkeepalive": "^2.2.0",
     "co-parallel": "^1.0.0",
     "formstream": "^1.0.0",
-    "lru-cache": "^4.1.1",
     "urllib": "^2.11.1"
   },
   "devDependencies": {
