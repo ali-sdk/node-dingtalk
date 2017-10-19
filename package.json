@@ -7,11 +7,12 @@
     "agentkeepalive": "^2.2.0",
     "co-parallel": "^1.0.0",
     "formstream": "^1.0.0",
-    "lru-cache": "^4.1.1",
+    "is-type-of": "^1.2.0",
     "urllib": "^2.11.1"
   },
   "devDependencies": {
     "autod": "^2.7.0",
+    "co": "^4.6.0",
     "egg-bin": "^1.2.0",
     "egg-ci": "^1.0.3",
     "eslint": "^3.2.2",
@@ -22,8 +23,7 @@
     "power-assert": "^1.4.1",
     "proxy-agent": "^2.0.0",
     "supertest": "^2.0.0",
-    "thunk-mocha": "^1.0.4",
-    "co": "^4.6.0"
+    "thunk-mocha": "^1.0.4"
   },
   "engines": {
     "node": ">=4.0.0"

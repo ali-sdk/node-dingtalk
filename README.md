@@ -47,19 +47,31 @@ console.log(deparment);
 const CACHE = {};
 const cache = {
   get(key) {
-    if (CACHE[key] && (CACHE[key].expired < Date.now())) {
+    if (CACHE[key] && (CACHE[key].expired > Date.now())) {
       return CACHE[key].value;
     } else {
       return null;
     }
   },
   set(key, value, maxAge) {
-    CACHE[key] = {
+    const obj = {
       expired: maxAge,
       value,
-    };
+    };    
+    CACHE[key] = obj;
+    return obj;
   },
 };
+
+// const redis = new Redis();
+// const cache = {
+//   * get(key) {
+//     return redis.get(key)
+//   },
+//   * set(key, value, maxAge) {
+//     return redis.set(key, value, 'PX', maxAge - Date.now());
+//   },
+// };
 
 const DingTalk = require('node-dingtalk');
 const dingtalk = new DingTalk({
