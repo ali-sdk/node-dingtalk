@@ -5,8 +5,6 @@ const assert = require('power-assert');
 const DingTalk = require('../../../lib/dingtalk');
 const options = require('./../../fixtures/test.config.json');
 
-// https://open-doc.dingtalk.com/docs/doc.htm?spm=a219a.7386797.0.0.JrgnK8&source=search&treeId=371&articleId=106817&docType=1#s2
-
 describe('test/lib/api/department.test.js', () => {
   let dingtalk;
 
@@ -14,6 +12,11 @@ describe('test/lib/api/department.test.js', () => {
     dingtalk = new DingTalk(options);
   });
 
+  /**
+   * createDepartment
+   * @see https://open-doc.dingtalk.com/docs/doc.htm?spm=a219a.7386797.0.0.JrgnK8&source=search&treeId=371&articleId=106817&docType=1#s2
+   * @return {Object} 部门
+   **/
   function* createDepartment() {
     const name = 'department_test_' + Date.now();
     yield dingtalk.department.create({ parentid: 1, name });
