@@ -48,7 +48,7 @@ const CACHE = {};
 const cache = {
   get(key) {
     if (CACHE[key] && (CACHE[key].expired > Date.now())) {
-      return CACHE[key].value;
+      return Promise.resolve(CACHE[key].value);
     } else {
       return Promise.resolve(null);
     }
