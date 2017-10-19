@@ -48,9 +48,9 @@ const CACHE = {};
 const cache = {
   get(key) {
     if (CACHE[key] && (CACHE[key].expired > Date.now())) {
-      return Promise.resolve(CACHE[key].value);
+      return CACHE[key].value;
     } else {
-      return Promise.resolve(null);
+      return null;
     }
   },
   set(key, value, maxAge) {
