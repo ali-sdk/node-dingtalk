@@ -48,9 +48,9 @@ const CACHE = {};
 const cache = {
   get(key) {
     if (CACHE[key] && (CACHE[key].expired > Date.now())) {
-      return CACHE[key];
+      return CACHE[key].value;
     } else {
-      return {};
+      return Promise.resolve(null);
     }
   },
   set(key, value, maxAge) {
@@ -66,12 +66,10 @@ const cache = {
 // const redis = new Redis();
 // const cache = {
 //   * get(key) {
-//     const value = yield redis.get(key);
-//     return { value };
+//     return redis.get(key)
 //   },
 //   * set(key, value, maxAge) {
-//     const saved = yield redis.set(key, value, 'PX', maxAge - Date.now());
-//     return { saved };
+//     return redis.set(key, value, 'PX', maxAge - Date.now());
 //   },
 // };
 
