@@ -3,7 +3,7 @@
 const assert = require('power-assert');
 
 const DingTalk = require('../../../lib/dingtalk');
-const options = require('./../../fixtures/test.config.json');
+const options = require('./../../fixtures/test.config');
 
 describe('test/lib/api/client.test.js', () => {
   let dingtalk;
@@ -63,5 +63,18 @@ describe('test/lib/api/client.test.js', () => {
     assert(cfg.timeStamp === opts.timestamp);
     assert(cfg.nonceStr === opts.noncestr);
     assert(cfg.signature === 'd392648b027b8f6ce13dc89db8b1a86c94764fae');
+  });
+
+  it('getQRConnectUrl', function* () {
+    const url = yield dingtalk.client.getQRConnectUrl({
+      redirect_uri: 'http://127.0.0.1:7001/auth/callback/dingding',
+    });
+    console.log(url);
+    assert(url);
+
+    const url2 = yield dingtalk.client.getQRConnectUrl({
+      redirect_uri: 'http://127.0.0.1:7001/auth/callback/dingding',
+    });
+    assert(url2 === url);
   });
 });
