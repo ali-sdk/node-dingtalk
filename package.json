@@ -1,6 +1,6 @@
 {
   "name": "node-dingtalk",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "dingtalk node sdk",
   "main": "./lib/dingtalk",
   "dependencies": {

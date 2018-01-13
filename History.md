@@ -1,9 +1,10 @@
 
-1.0.0 / 2017-07-31
+1.1.0 / 2018-01-13
 ==================
 
+  * feat: support multi app keys (#20)
+  * feat: add redis support (#19)
   * test: change userName to \'user-{userId}\' (#16)
-  * feat: allow save token to external cache && remove `media.get` due to dingtalk api changed (#14)
 
 1.0.0 / 2017-07-31
 ==================
@@ -31,4 +32,4 @@
   * department
   * media
   * message
-  
+
