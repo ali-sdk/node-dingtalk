@@ -1,9 +1,0 @@
-{
-  "host": "https://oapi.dingtalk.com",
-  "corpid": "ding88426d4c2c14a8d6",
-  "corpsecret": "FfvjRyDkFGsKF3_qSNcvJvOFHdvdgdiYgRToEgUjnyS93vYec8hPk0vEY3zg_ZVY",
-  "agentid": "36504082",
-  "requestOpts": {
-    "timeout": 10000
-  }
-}

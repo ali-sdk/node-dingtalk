@@ -5,7 +5,7 @@ const os = require('os');
 const assert = require('power-assert');
 
 const DingTalk = require('../../../lib/dingtalk');
-const options = require('./../../fixtures/test.config.json');
+const options = require('./../../fixtures/test.config');
 
 describe('test/lib/api/media.test.js', () => {
   let dingtalk;
