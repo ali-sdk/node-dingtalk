@@ -1,4 +1,10 @@
 
+1.2.0 / 2018-02-02
+==================
+
+**features**
+  * [[`e66087b`](http://github.com/ali-sdk/node-dingtalk/commit/e66087b3c74b898e894ffe11583339a6fa03b65f)] - feat: add web auth and login url (#21) (fengmk2 <<fengmk2@gmail.com>>)
+
 1.1.0 / 2018-01-13
 ==================
 
