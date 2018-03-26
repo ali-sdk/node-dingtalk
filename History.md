@@ -1,4 +1,10 @@
 
+1.3.0 / 2018-03-26
+==================
+
+**features**
+  * [[`e2e6931`](http://github.com/ali-sdk/node-dingtalk/commit/e2e69319f0a6953ed0da916b616d8d8e1e1b8406)] - feat: add department.listSubDepartmentIds() and department.listParentDepartmentIds() (#22) (fengmk2 <<fengmk2@gmail.com>>)
+
 1.2.0 / 2018-02-02
 ==================
 
