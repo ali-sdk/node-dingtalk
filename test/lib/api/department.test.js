@@ -42,6 +42,46 @@ describe('test/lib/api/department.test.js', () => {
     yield dingtalk.department.delete(department.id);
   });
 
+  it('listSubDepartmentIds', function* () {
+    const name = 'department_listSubDepartmentIds_' + Date.now();
+    const parent = yield dingtalk.department.create({
+      parentid: 1,
+      name,
+    });
+    assert(parent.id);
+    const c1 = yield dingtalk.department.create({
+      parentid: parent.id,
+      name: name + '_child1',
+    });
+    const c2 = yield dingtalk.department.create({
+      parentid: parent.id,
+      name: name + '_child2',
+    });
+    const result = yield dingtalk.department.listSubDepartmentIds(parent.id);
+    assert.deepEqual(result.sub_dept_id_list.sort(), [ c2.id, c1.id ].sort());
+    assert(result.errcode === 0);
+    assert(result.errmsg === 'ok');
+  });
+
+  it('listParentDepartmentIds', function* () {
+    const name = 'department_listParentDepartmentIds_' + Date.now();
+    const parent = yield dingtalk.department.create({
+      parentid: 1,
+      name,
+    });
+    assert(parent.id);
+    const c1 = yield dingtalk.department.create({
+      parentid: parent.id,
+      name: name + '_child1',
+    });
+    const c12 = yield dingtalk.department.create({
+      parentid: c1.id,
+      name: name + '_child1_child2',
+    });
+    const result = yield dingtalk.department.listParentDepartmentIds(c12.id);
+    assert.deepEqual(result.parentIds, [ c12.id, c1.id, parent.id, 1 ]);
+  });
+
   it('get', function* () {
     const department = yield dingtalk.department.get('1');
     assert(department.id);
