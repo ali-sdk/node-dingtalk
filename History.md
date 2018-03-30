@@ -1,4 +1,10 @@
 
+1.4.1 / 2018-03-30
+==================
+
+**fixes**
+  * [[`1e2ff16`](http://github.com/ali-sdk/node-dingtalk/commit/1e2ff16cd5624b1b839fca5914255a520386791f)] - fix: don't set host when using proxy (#24) (Yiyu He <<dead_horse@qq.com>>)
+
 1.4.0 / 2018-03-30
 ==================
 
