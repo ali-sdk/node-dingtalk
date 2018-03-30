@@ -1,4 +1,10 @@
 
+1.4.0 / 2018-03-30
+==================
+
+**features**
+  * [[`d7b70f9`](http://github.com/ali-sdk/node-dingtalk/commit/d7b70f9d259007cc2bb739843c450e39b333acf4)] - feat: support options.proxy (#23) (Yiyu He <<dead_horse@qq.com>>)
+
 1.3.0 / 2018-03-26
 ==================
 
