@@ -85,9 +85,8 @@ describe('test/lib/api/client.test.js', () => {
 
   it('should proxy work', function* () {
     const proxyOptions = Object.assign({ proxy: 'http://127.0.0.1:7002', urllib }, options);
-    mm(urllib, 'request', function* (url, params) {
+    mm(urllib, 'request', function* (url) {
       assert(url === 'http://127.0.0.1:7002/foo/bar');
-      assert(params.headers.host === 'oapi.dingtalk.com');
       return {
         data: { errcode: 0 },
       };
