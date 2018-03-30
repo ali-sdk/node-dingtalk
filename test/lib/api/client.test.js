@@ -1,9 +1,12 @@
 'use strict';
 
 const assert = require('power-assert');
+const mm = require('mm');
+const urllib = require('urllib');
 
 const DingTalk = require('../../../lib/dingtalk');
 const options = require('./../../fixtures/test.config');
+
 
 describe('test/lib/api/client.test.js', () => {
   let dingtalk;
@@ -11,6 +14,8 @@ describe('test/lib/api/client.test.js', () => {
   before(function* () {
     dingtalk = new DingTalk(options);
   });
+
+  afterEach(mm.restore);
 
   it('getAccessToken', function* () {
     const token = yield dingtalk.client.getAccessToken();
@@ -76,5 +81,19 @@ describe('test/lib/api/client.test.js', () => {
       redirect_uri: 'http://127.0.0.1:7001/auth/callback/dingding',
     });
     assert(url2 === url);
+  });
+
+  it('should proxy work', function* () {
+    const proxyOptions = Object.assign({ proxy: 'http://127.0.0.1:7002', urllib }, options);
+    mm(urllib, 'request', function* (url, params) {
+      assert(url === 'http://127.0.0.1:7002/foo/bar');
+      assert(params.headers.host === 'oapi.dingtalk.com');
+      return {
+        data: { errcode: 0 },
+      };
+    });
+    dingtalk = new DingTalk(proxyOptions);
+    const res = yield dingtalk.client.request(proxyOptions.host + '/foo/bar');
+    assert(res);
   });
 });
