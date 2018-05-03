@@ -1,4 +1,10 @@
 
+1.5.0 / 2018-05-03
+==================
+
+**features**
+  * [[`d0b9714`](http://github.com/ali-sdk/node-dingtalk/commit/d0b9714f6d9a763c3d553eeda71308c98d62e77f)] - feat: add auth.scopes (#25) (frontwindysky <<frontwindysky@gmail.com>>)
+
 1.4.1 / 2018-03-30
 ==================
 
