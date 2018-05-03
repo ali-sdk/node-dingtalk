@@ -191,6 +191,15 @@ id 对应于 userid, 参数, 其他参数放到 opts
 下载媒体文件 `media/downloadFile`
 
 
+### Auth
+
+https://open-doc.dingtalk.com/docs/doc.htm?treeId=385&articleId=106091&docType=1
+
+#### auth.scopes([opts])
+
+获取授权范围 `auth/scopes`
+
+
 ## Questions & Suggestions
 
 Please open an issue [here](https://github.com/atian25/node-dingtalk/issues).
