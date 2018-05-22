@@ -1,4 +1,10 @@
 
+1.6.0 / 2018-05-22
+==================
+
+**features**
+  * [[`18448fb`](http://github.com/ali-sdk/node-dingtalk/commit/18448fb978ae0f81b281dcf503d39069c0e00991)] - feat: support extcontact (#26) (frontwindysky <<frontwindysky@gmail.com>>)
+
 1.5.0 / 2018-05-03
 ==================
 
