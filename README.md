@@ -200,6 +200,32 @@ https://open-doc.dingtalk.com/docs/doc.htm?treeId=385&articleId=106091&docType=1
 获取授权范围 `auth/scopes`
 
 
+### Extcontact
+
+https://open-doc.dingtalk.com/microapp/serverapi2/nb93oa
+
+#### extcontact.list({offset, size}, opts)
+获取外部联系人列表 `topapi/extcontact/list`
+
+#### extcontact.listAll(opts)
+获取所有外部联系人列表
+
+#### extcontact.get(user_id, opts)
+通过 userid 获取外部联系人信息 `topapi/extcontact/get`
+
+#### extcontact.create({name, mobile, label_ids, follower_user_id}, opts)
+添加外部联系人 `topapi/extcontact/create`
+
+#### extcontact.update({user_id, name, label_ids, follower_user_id}, opts)
+更新外部联系人 `topapi/extcontact/update`
+
+#### extcontact.delete(user_id, opts)
+删除外部联系人 `topapi/extcontact/delete`
+
+#### extcontact.listlabelgroups({offset, size}, opts)
+获取外部联系人标签 `topapi/extcontact/listlabelgroups`
+
+
 ## Questions & Suggestions
 
 Please open an issue [here](https://github.com/atian25/node-dingtalk/issues).
