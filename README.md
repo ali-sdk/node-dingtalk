@@ -57,7 +57,7 @@ const cache = {
     const obj = {
       expired: maxAge,
       value,
-    };    
+    };
     CACHE[key] = obj;
     return obj;
   },
@@ -65,10 +65,10 @@ const cache = {
 
 // const redis = new Redis();
 // const cache = {
-//   * get(key) {
+//   async get(key) {
 //     return redis.get(key)
 //   },
-//   * set(key, value, maxAge) {
+//   async set(key, value, maxAge) {
 //     return redis.set(key, value, 'PX', maxAge - Date.now());
 //   },
 // };
