@@ -1,4 +1,10 @@
 
+2.0.0 / 2018-07-26
+==================
+
+**others**
+  * [[`1b05f62`](http://github.com/ali-sdk/node-dingtalk/commit/1b05f62ce1d22e52b905c9bba682274d121ba2bd)] - refactor: use async await, drop support of node <8 (#27) (Yiyu He <<dead_horse@qq.com>>)
+
 1.6.0 / 2018-05-22
 ==================
 
