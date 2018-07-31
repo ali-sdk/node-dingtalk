@@ -77,8 +77,16 @@ describe('test/lib/api/user.test.js', () => {
     assert(!user);
   });
 
-  it('list', function* () {
+  it('list with logger', function* () {
+    dingtalk.client.options.logger = console;
     const userList = yield dingtalk.user.list('1');
+    try {
+      yield dingtalk.user.list('1abc');
+    } catch (err) {
+      assert(err);
+      console.log(err);
+    }
+    dingtalk.client.options.logger = null;
     console.log('%j', userList);
     assert(userList.errcode === 0);
     assert(userList.userlist.length > 0);
