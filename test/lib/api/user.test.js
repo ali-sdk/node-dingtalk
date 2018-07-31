@@ -82,8 +82,10 @@ describe('test/lib/api/user.test.js', () => {
     const userList = yield dingtalk.user.list('1');
     try {
       yield dingtalk.user.list('1abc');
+      throw new Error('should not run this');
     } catch (err) {
       assert(err);
+      assert(err.name === 'DingTalkClientResponseError');
       console.log(err);
     }
     dingtalk.client.options.logger = null;
