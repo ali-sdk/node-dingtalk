@@ -1,4 +1,10 @@
 
+2.1.0 / 2018-07-31
+==================
+
+**features**
+  * [[`a63138c`](http://github.com/ali-sdk/node-dingtalk/commit/a63138c47f145d3c99500256a5b0e38247e2d8ab)] - feat: support options.logger to auto log every response (#28) (fengmk2 <<fengmk2@gmail.com>>)
+
 2.0.0 / 2018-07-26
 ==================
 
