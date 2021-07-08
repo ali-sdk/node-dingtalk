@@ -20,8 +20,11 @@
 [download-image]: https://img.shields.io/npm/dm/node-dingtalk.svg?style=flat-square
 [download-url]: https://npmjs.org/package/node-dingtalk
 
+---
 
-** DEPRECATE, use [@alicloud/dingtalk](https://developers.dingtalk.com/document/app/sdk-download/title-4s2-m09-74o) instead.**
+**this package is DEPRECATED, please use [@alicloud/dingtalk](https://developers.dingtalk.com/document/app/sdk-download/title-4s2-m09-74o) instead.**
+
+---
 
 ## Install
 
